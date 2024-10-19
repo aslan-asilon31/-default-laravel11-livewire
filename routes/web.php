@@ -18,5 +18,7 @@ Route::resource('/', WelcomeController::class);
 Route::resource('blogs', BlogController::class);
 Route::resource('products', ProductController::class);
 Route::put('/outlets/{outlet}', [OutletController::class, 'update'])->name('outlets.update');
+Route::get('/user', [\App\Livewire\ShowUsers::class, '__invoke'])->middleware('guest');
+
 // Route::put('/outlets/{outlet}', [OutletController::class,'update'])->name('outlets.update');
 
